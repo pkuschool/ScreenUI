@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Document</title>
+    <link rel="stylesheet" href="./src/fabric.css">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+
+<body>
+    <header>
+        <i class="ms-Icon ms-Icon--Info site-name" aria-hidden="true"></i>
+        <span class="site-name site-title">信息栏</span>
+        <img src="./src/logowhite.svg" alt="" class="subit-right">
+    </header>
+    <main>
+        <div class="media-display">
+            <video src="./video.mp4">
+            </video>
+            <div class="media-playback-ctrl"><i class="ms-Icon ms-Icon--Play playicon" aria-hidden="true" size="23"></i></div>
+        </div>
+    </main>
+</body>
+<script>
+    var mediaPlayback = document.querySelector('video')
+    var mediaCtrl = document.querySelector('.media-playback-ctrl')
+    var mediaCtrlIcon = document.querySelector('.playicon')
+    mediaCtrl.addEventListener('click', function() {
+        if (mediaPlayback.paused) {
+            mediaPlayback.play()
+
+        } else {
+            mediaPlayback.pause()
+        }
+        mediaCtrlIcon.classList.toggle('ms-Icon--Play')
+        mediaCtrlIcon.classList.toggle('ms-Icon--Pause')
+    })
+</script>
+
+</html>
